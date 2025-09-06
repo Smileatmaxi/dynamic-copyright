@@ -1,0 +1,38 @@
+{
+  "name": "dynamic-copyright",
+  "version": "1.0.4",
+  "description": "Tiny utility to update copyright years or ranges automatically in the DOM.",
+  "license": "MIT",
+  "type": "module",
+  "main": "index.cjs",
+  "module": "index.mjs",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.mjs",
+      "require": "./index.cjs",
+      "default": "./index.cjs"
+    }
+  },
+  "files": [
+    "index.cjs",
+    "index.mjs",
+    "index.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "author": "Maximilian Leupold",
+  "keywords": [
+    "copyright",
+    "year",
+    "auto-update",
+    "footer",
+    "legal",
+    "date",
+    "javascript",
+    "dom",
+    "web"
+  ]
+}
