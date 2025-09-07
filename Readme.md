@@ -95,9 +95,10 @@ run();
 }, []);
 return <>© <span data-copyright-start="2020"></span> Startup</>;
 }
+```
+### Vue
 
-Vue
-
+```bash
 <template>
   <footer>© <span data-copyright-start="2018"></span> My Company</footer>
 </template>
