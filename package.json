@@ -1,6 +1,6 @@
 {
   "name": "dynamic-copyright",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Tiny utility to update copyright years or ranges automatically in the DOM.",
   "license": "MIT",
   "type": "module",
