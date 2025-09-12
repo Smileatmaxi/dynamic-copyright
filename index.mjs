@@ -1,18 +1,33 @@
-export default function updateCopyrightYears() {
+export default function updateCopyrightYears(options = {}) {
     const now = new Date().getFullYear();
 
-    document.querySelectorAll('[data-copyright-start]').forEach((el) => {
-        const start = parseInt(el.getAttribute('data-copyright-start'), 10);
-        el.textContent = (start && start < now) ? (start + '–' + now) : now;
-    });
+    const {
+        selector = "[data-copyright-start] #copyYear",
+        startingYearAttribute= "data-copyright-start",
+        separator = "-",
+        prefix = "",
+        suffix= ""
+    } = options;
 
-    const el = document.getElementById('copyYear');
-    if (el) el.textContent = now;
+    document.querySelectorAll(selector).forEach((el) => {
+        let yearText = "";
+        let start = el.getAttribute(startingYearAttribute);
+
+        if (start) {
+            start = parseInt(start, 10);
+            yearText = (start && start < now) ? `${start}${separator}${now}` : `${now}`;
+        } else {
+            yearText = `${now}`;
+        }
+
+        el.textContent = `${prefix}${yearText}${suffix}`;
+    });
 }
 
-if (typeof window !== 'undefined' && typeof document !== 'undefined') {
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => updateCopyrightYears());
+    //Auto-run in Browser
+if (typeof window !== "undefined" && typeof document !== "undefined") {
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", () => updateCopyrightYears());
     } else {
         updateCopyrightYears();
     }
